@@ -45,11 +45,10 @@ while (i <= ind) {
       i = i + 1
       }
 tidydata1=subX
-write.csv2(tidydata1,file="./tidydata1.csv",sep=",")
+write.csv2(tidydata1,file="./Getting-and-Cleaning-Data/tidydata1.csv",sep=",")
 
 #Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 tidydata2=aggregate(tidydata1[,1] ~ tidydata1$Subject * tidydata1$Activity,FUN=mean)
-
 
 j=2
 ind=79
@@ -60,4 +59,4 @@ while (j <= ind) {
       j = j + 1
 }
 
-write.csv2(tidydata2,file="./tidydata2.csv",sep=",")
+write.csv2(tidydata2,file="./Getting-and-Cleaning-Data/tidydata2.csv",sep=",")
