@@ -1,6 +1,10 @@
-Getting-and-Cleaning-Data
+README
 =========================
-
 Coursera DataScience Specialisation Track
 
-To be done soon
+Getting and Cleaning Data
+
+Course Project
+
+Alfred Anand      20 May 2014
+
