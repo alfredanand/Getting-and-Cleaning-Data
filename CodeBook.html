@@ -154,9 +154,9 @@ hr {
 
 <h2>Overview</h2>
 
-<p>This Codebook is meant to be read together with the accompanying README</p>
+<p>This Codebook is meant to be read together with the accompanying README. Note that the variable names used here are those of the raw data and not those of the cleanup after the cleanup (conversion to human-readable format). The conversion rules are given at the bottom of this file.</p>
 
-<h2>Details</h2>
+<h2>Study Design</h2>
 
 <p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix &#39;t&#39; to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
 
@@ -784,6 +784,35 @@ hr {
 <li>angle(Y,gravityMean)</li>
 <li>angle(Z,gravityMean)</li>
 </ol>
+
+<h2>Human-readable Conversion (non-case sensitive)</h2>
+
+<ul>
+<li>&ldquo;acc&rdquo; was converted to &ldquo;Acceleration&rdquo;</li>
+<li>&ldquo;std&rdquo; was converted to &ldquo;StandardDeviation&rdquo;</li>
+<li>&ldquo;mad&rdquo; was converted to &ldquo;MedianAbsoluteDeviation&rdquo;</li>
+<li>&ldquo;inds&rdquo; was converted to &ldquo;Index&rdquo;</li>
+<li>&ldquo;mean&rdquo; was converted to &ldquo;Mean&rdquo;</li>
+<li>&ldquo;max&rdquo; was converted to &ldquo;Maximum&rdquo;</li>
+<li>&ldquo;min&rdquo; was converted to &ldquo;Minimum&rdquo;</li>
+<li>&ldquo;energy&rdquo; was converted to &ldquo;Energy&rdquo;</li>
+<li>&ldquo;iqr&rdquo; was converted to &ldquo;InterQuartileRange&rdquo;</li>
+<li>&ldquo;entropy&rdquo; was converted to &ldquo;SignalEntropy&rdquo;</li>
+<li>&ldquo;arCoeff&rdquo; was converted to &ldquo;AutoRegressionCoefficient&rdquo;</li>
+<li>&ldquo;correlation&rdquo; was converted to &ldquo;CorrelationCoefficient&rdquo;</li>
+<li>&ldquo;mag&rdquo; was converted to &ldquo;Magnitude&rdquo;</li>
+<li>&ldquo;freq&rdquo; was converted to &ldquo;Frequency&rdquo;</li>
+<li>&ldquo;skew&rdquo; was converted to &ldquo;Skew&rdquo;</li>
+<li>&ldquo;kurt&rdquo; was converted to &ldquo;Kurt&rdquo;</li>
+<li>&ldquo;band&rdquo; was converted to &ldquo;Band&rdquo;</li>
+<li>&ldquo;inds&rdquo; was converted to &ldquo;Index&rdquo;</li>
+<li>&ldquo;gravity&rdquo; was converted to &ldquo;Gravity&rdquo;</li>
+<li>&ldquo;,&rdquo; was converted to &ldquo;to&rdquo;</li>
+<li>&ldquo;sma&rdquo; was converted to &ldquo;SignalMagnitudeArea&rdquo;</li>
+<li>&ldquo;angle&rdquo; was converted to &ldquo;Angle&rdquo;</li>
+<li>&ldquo;(&rdquo; was converted to &ldquo;&rdquo;</li>
+<li>&ldquo;)&rdquo; was converted to &ldquo;&rdquo;</li>
+</ul>
 
 <h3>End of Document</h3>
 

@@ -10,9 +10,9 @@ Alfred Anand      20 May 2014
 
 Overview
 --------
-This Codebook is meant to be read together with the accompanying README
+This Codebook is meant to be read together with the accompanying README. Note that the variable names used here are those of the raw data and not those of the cleanup after the cleanup (conversion to human-readable format). The conversion rules are given at the bottom of this file.
 
-Details
+Study Design
 -------
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -632,5 +632,32 @@ The complete list of variables of each feature vector is as follows:
 559. angle(X,gravityMean)
 560. angle(Y,gravityMean)
 561. angle(Z,gravityMean)
+
+Human-readable Conversion (non-case sensitive)
+-------------------------
+- "acc" was converted to "Acceleration"
+- "std" was converted to "StandardDeviation"
+- "mad" was converted to "MedianAbsoluteDeviation"
+- "inds" was converted to "Index"
+- "mean" was converted to "Mean"
+- "max" was converted to "Maximum"
+- "min" was converted to "Minimum"
+- "energy" was converted to "Energy"
+- "iqr" was converted to "InterQuartileRange"
+- "entropy" was converted to "SignalEntropy"
+- "arCoeff" was converted to "AutoRegressionCoefficient"
+- "correlation" was converted to "CorrelationCoefficient"
+- "mag" was converted to "Magnitude"
+- "freq" was converted to "Frequency"
+- "skew" was converted to "Skew"
+- "kurt" was converted to "Kurt"
+- "band" was converted to "Band"
+- "inds" was converted to "Index"
+- "gravity" was converted to "Gravity"
+- "," was converted to "to"
+- "sma" was converted to "SignalMagnitudeArea"
+- "angle" was converted to "Angle"
+- "(" was converted to ""
+- ")" was converted to ""
 
 ### End of Document

@@ -158,11 +158,11 @@ hr {
 
 <p>The data used is data collected from the accelerometers from the Samsung Galaxy S smartphone. </p>
 
-<p>A full description is available at the site where the data was obtained:<a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></p>
+<p>A full description is available at the site where the data was obtained: <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></p>
 
 <p>Data for the project is available here: <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a></p>
 
-<p>The primary script is run_analysis.R, which does the following. </p>
+<p>The primary script is run_analysis.R, which does the following:</p>
 
 <ol>
 <li>Merges the training and the test sets to create one data set.</li>
@@ -170,6 +170,13 @@ hr {
 <li>Uses descriptive activity names to name the activities in the data set</li>
 <li>Appropriately labels the data set with descriptive activity names. </li>
 <li>Creates a second, independent tidy data set with the average of each variable for each activity and each subject. </li>
+</ol>
+
+<p>There will be 2 output files:</p>
+
+<ol>
+<li>tidydata1.csv - Full set of observations which are means and standard deviations</li>
+<li>tidydata2.csv - Means and standard deviations averaged per subject and activity</li>
 </ol>
 
 <p>For details of the data definition, please refer to CodeBook.md</p>
@@ -183,6 +190,8 @@ hr {
 <li><p>The following data files are loaded to a data frame of the same name:</p>
 
 <ul>
+<li>features - strings in column 2 are changed to human-read form using gsub</li>
+<li>activity_labels - strings in column 2 are changed to human-read form using gsub</li>
 <li>subject_train</li>
 <li>X_train</li>
 <li>y_train</li>
@@ -193,8 +202,8 @@ hr {
 <li><p>Test and training data are merged as follows:</p>
 
 <ul>
-<li>test and training dataframes (X_test and X_train) are appended with a column Source to indicate if they are test or training data</li>
-<li>subject_train and y_train are appended as columns to to test and training data X_train. Similarly for test X_test</li>
+<li>Test and training dataframes (X_test and X_train) are appended with a column Source to indicate if they are test or training data</li>
+<li>Subject_train and y_train are appended as columns to test and training data X_train. Similarly for test X_test</li>
 <li>Second columns of features data frame is converted to char</li>
 <li>3 rows are added to features, to cater for the new columns created in X_train and X_test</li>
 <li>New data frame X is created by merge X_train and X-test, and its column names are taken from the second column of the features dataset</li>
@@ -202,27 +211,21 @@ hr {
 <li><p>Measurements on the mean and standard deviation for each measurement are extracted as follows:</p>
 
 <ul>
-<li>SubX1 data frame is created from data frame X for measurements of mean, by using the indexing and grep capabilities. Similarly, SubX2 is created for standard deviations. Therefore any column name in X with the string &ldquo;mean&rdquo; or &ldquo;std&rdquo; in it will be included in SubX1 and SubX2</li>
-<li>SubX data frame is created by binding SubX1, SubX2, and the last 3 columns of X, which shows Source, Subject and Activity</li>
+<li>SubX data frame is created from data frame X for measurements of mean and standard deviations, by using the indexing and grep capabilities. Therefore, any column name in X with the string &ldquo;Mean&rdquo; or &ldquo;StandardDeviation&rdquo; in it will be included in SubX</li>
+<li>SubX data frame is appended with the last 3 columns of X, which shows Source, Subject and Activity</li>
 </ul></li>
-<li><p>Descriptive activity names to name the activities in the data set are set</p>
+<li><p>Descriptive activity names to name the activities in the data set are set &amp; Label the data set appropriately with descriptive activity names</p>
 
 <ul>
-<li>Second columns of activity_labels data frame is converted to char</li>
-<li>The activity column values in the SubX dataframe is replaced with values lookedup from the activity_labels dataset. (Lookup column 1 and replace with column 2)</li>
+<li>The activity column values in the SubX dataframe is replaced with values lookedup from the activity_labels dataset. (Lookup column 1 and replace with column 2)<br/></li>
+<li>Copy SubX data frame to tidydata1 dataframe, and write it out to a .csv of the same name</li>
 </ul></li>
-<li><p>Label the data set appropriately with descriptive activity names</p>
+<li><p>Creates a second, independent tidy data set with the average of each variable for each activity and each subject. </p>
 
 <ul>
-<li> Not done yet!</li>
-<li>Copy SubX data frame to tidydata1 dataframe, and write it out to a .csv of the same name
-
-<ul>
-<li>Creates a second, independent tidy data set with the average of each variable for each activity and each subject. </li>
-</ul></li>
 <li>A new data frame tidydata2 is derived by aggregating column 1 of tidydata1 data frame by subject and activity. This new data frame will have 3 columns at this point</li>
 <li>A for loop appends columns to tidydata2 by aggregating columns 2 onwards of data frame tidydata1</li>
-<li>tidydata1 dataframe is writen out to a .csv of the same name</li>
+<li>tidydata2 dataframe is writen out to a .csv of the same name</li>
 </ul></li>
 </ul>
 
